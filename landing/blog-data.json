@@ -1,0 +1,52 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Embracing Health in Daily Life",
+      "date": "May 31, 2026",
+      "excerpt": "Discover simple yet powerful ways to incorporate wellness into your everyday routine, from morning walks to balanced nutrition.",
+      "color": "from-brand-gold/20 to-brand-green/20",
+      "readMoreUrl": "#"
+    },
+    {
+      "id": 2,
+      "title": "Modern Farming Techniques",
+      "date": "May 28, 2026",
+      "excerpt": "Explore sustainable agricultural practices that maximize yield while preserving our environment for future generations.",
+      "color": "from-brand-bronze/20 to-brand-gold/20",
+      "readMoreUrl": "#"
+    },
+    {
+      "id": 3,
+      "title": "Digital Transformation Guide",
+      "date": "May 25, 2026",
+      "excerpt": "Learn how businesses can leverage digital tools to streamline operations and reach wider audiences in the modern marketplace.",
+      "color": "from-brand-blue/20 to-brand-green/20",
+      "readMoreUrl": "#"
+    },
+    {
+      "id": 4,
+      "title": "Nutrition Tips for Active Lifestyle",
+      "date": "May 22, 2026",
+      "excerpt": "Get expert insights on maintaining optimal nutrition while pursuing an active health routine with daily walks and exercises.",
+      "color": "from-brand-green/20 to-brand-gold/20",
+      "readMoreUrl": "#"
+    },
+    {
+      "id": 5,
+      "title": "Community Building Through Health",
+      "date": "May 19, 2026",
+      "excerpt": "Learn how communities thrive when health and wellness are at the forefront of their engagement initiatives.",
+      "color": "from-brand-gold/20 to-brand-blue/20",
+      "readMoreUrl": "#"
+    },
+    {
+      "id": 6,
+      "title": "Technology in Agriculture",
+      "date": "May 16, 2026",
+      "excerpt": "Discover cutting-edge technologies revolutionizing the agricultural sector and improving farm productivity.",
+      "color": "from-brand-bronze/20 to-brand-green/20",
+      "readMoreUrl": "#"
+    }
+  ]
+}

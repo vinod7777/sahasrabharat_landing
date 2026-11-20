@@ -1,0 +1,1692 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahasra Bharat | Education, Health & Agriculture Ecosystem</title>
+    <meta name="description" content="Sahasra Bharat is an ecosystem for Education, Health, and Agriculture, bringing community wellness, partner farms, and modern learning together.">
+    <link rel="canonical" href="https://sahasrabharat.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="1040562c-115a-4e7c-a091-25a3c9c55014.jpg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sahasrabharat.com/">
+    <meta property="og:title" content="Sahasra Bharat | Education, Health & Agriculture Ecosystem">
+    <meta property="og:description" content="An interconnected ecosystem for Education, Health, and Agriculture, integrating community wellness, partner organic farms, and modern skills development.">
+    <meta property="og:image" content="https://sahasrabharat.com/1040562c-115a-4e7c-a091-25a3c9c55014.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sahasrabharat.com/">
+    <meta property="twitter:title" content="Sahasra Bharat | Education, Health & Agriculture Ecosystem">
+    <meta property="twitter:description" content="An interconnected ecosystem for Education, Health, and Agriculture, integrating community wellness, partner organic farms, and modern skills development.">
+    <meta property="twitter:image" content="https://sahasrabharat.com/1040562c-115a-4e7c-a091-25a3c9c55014.jpg">
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sahasra Bharat",
+      "url": "https://sahasrabharat.com/",
+      "logo": "https://sahasrabharat.com/1040562c-115a-4e7c-a091-25a3c9c55014.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9515177993",
+        "contactType": "customer service",
+        "email": "sahasrabharat@gmail.com"
+      },
+      "sameAs": [
+        "https://instagram.com/sahasrabharat",
+        "https://linkedin.com/company/sahasra-bharat"
+      ],
+      "description": "Sahasra Bharat is a multi-vertical ecosystem focused on organic agriculture, community health walks, and modern vocational education."
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a0f1d',
+                            darker: '#050810',
+                            gold: '#D4AF37',
+                            blue: '#007AFF',
+                            green: '#13543A', // Rich forest green matching logo
+                            mint: '#10B981',  // Keep bright green for highlights
+                            bronze: '#CD7F32',
+                            teal: '#008276',  // Flyer vibrant teal
+                            navy: '#0f3f54',  // Flyer deep navy
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style type="text/tailwindcss">
+        :root {
+            color-scheme: light;
+        }
+        .dark {
+            color-scheme: dark;
+        }
+        select option {
+            background-color: white;
+            color: #0a0f1d;
+        }
+        .dark select option {
+            background-color: #0a0f1d;
+            color: white;
+        }
+        body {
+            background-color: white;
+            color: #0a0f1d; /* brand-dark */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .dark body {
+            background-color: #0a0f1d;
+            color: white;
+        }
+        
+        #canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .dark .glass-nav {
+            background-color: rgba(10, 15, 29, 0.4);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA8C2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        .dark ::-webkit-scrollbar-track {
+            background-color: #050810;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #d1d5db; /* gray-300 */
+            border-radius: 2px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #333;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #9ca3af; /* gray-400 */
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        /* Mobile Nav Link Hover Effect */
+        .mobile-nav-link {
+            position: relative;
+        }
+        .mobile-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .mobile-nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Scrolled Nav State */
+        nav.nav-scrolled {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+        header.header-scrolled .top-bar {
+            margin-top: -40px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .top-bar {
+            transition: margin-top 0.3s ease, opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Header/Navigation Wrapper -->
+    <header class="fixed w-full z-50 transition-all duration-300">
+        <!-- Top Contact & Social Bar -->
+        <div class="top-bar hidden lg:block bg-[#050810]/95 text-white/70 py-2.5 border-b border-white/5 text-xs font-medium">
+            <div class="max-w-7xl mx-auto px-4 md:px-12 flex justify-between items-center">
+                <!-- Left: Contact Details -->
+                <div class="flex items-center gap-4">
+                    <a href="mailto:sahasrabharat@gmail.com" class="hover:text-brand-gold transition-colors flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        sahasrabharat@gmail.com
+                    </a>
+                    <span class="text-white/20">|</span>
+                    <a href="tel:+919515177993" class="hover:text-brand-gold transition-colors flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        +91 9515177993
+                    </a>
+                </div>
+                <!-- Right: Social Links -->
+                <div class="flex items-center gap-3">
+                    <a href="https://instagram.com/sahasrabharat" target="_blank" rel="noreferrer" class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors" aria-label="Instagram">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/company/sahasra-bharat" target="_blank" rel="noreferrer" class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors" aria-label="LinkedIn">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <nav class="glass-nav border-b border-transparent transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 md:px-12">
+                <div class="flex items-center justify-between h-16 md:h-20">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.location.href='#home'">
+                        <img src="1040562c-115a-4e7c-a091-25a3c9c55014.jpg" alt="Sahasra Bharat Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-brand-gold shadow-md hover:scale-105 transition-transform duration-300">
+                        <span class="font-bold text-lg md:text-xl tracking-tight text-brand-dark dark:text-white">Sahasra <span class="hidden sm:inline">Bharat</span></span>
+                    </div>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden lg:flex items-center gap-6">
+                        <div class="flex items-center space-x-3 xl:space-x-6">
+                            <a href="#home" class="text-xs xl:text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white transition-colors">Home</a>
+                            <a href="#ecosystem" class="text-xs xl:text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white transition-colors">Ecosystem</a>
+                            <a href="#health-walk" class="text-xs xl:text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white transition-colors">Health Walk</a>
+                            <a href="#blog" class="text-xs xl:text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white transition-colors">Blog</a>
+                            <a href="#farm-partners" class="text-xs xl:text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white transition-colors">Farms</a>
+                            <a href="#education" class="text-xs xl:text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white transition-colors">Education</a>
+                            <a href="#about" class="text-xs xl:text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white transition-colors">About</a>
+                            <a href="#contact" class="text-xs xl:text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white transition-colors">Contact</a>
+                        </div>
+                        
+                        <a href="#contact" class="relative group inline-flex items-center justify-center px-4 xl:px-6 py-2 xl:py-2.5 text-xs xl:text-sm font-semibold text-brand-dark transition-all duration-200 bg-brand-gold border border-transparent rounded-full hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-gold animate-pulse-slow">
+                            Get Started
+                            <div class="absolute inset-0 rounded-full group-hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-shadow duration-300"></div>
+                        </a>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="lg:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white focus:outline-none z-50">
+                            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 overflow-hidden">
+        <div id="canvas-container"></div>
+        
+        <!-- Glowing background orb -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="hero-content relative z-10 flex flex-col items-center max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                <span class="text-xs font-medium tracking-wide text-brand-dark dark:text-gray-300 uppercase">A-Z Solutions Ecosystem</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-[1.1]">
+                <span class="block text-brand-dark dark:text-white">Welcome to</span>
+                <span class="text-gradient-gold block mt-2">SAHASRA BHARAT</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-gray-600 dark:text-gray-400 font-light mb-10 max-w-2xl leading-relaxed">
+                The ultimate one-stop solution for all your needs. Seamlessly integrating community health, modern education, and sustainable farming.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5">
+                <a href="#ecosystem" class="px-8 py-4 bg-brand-dark text-white dark:bg-white dark:text-brand-dark font-semibold rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-300 text-center">
+                    Explore Ecosystem
+                </a>
+                <a href="#contact" class="px-8 py-4 border border-black/20 dark:border-white/20 text-brand-dark dark:text-white font-medium rounded-full hover:bg-black/5 dark:hover:bg-white/5 hover:border-black/40 dark:hover:border-white/40 transition-all duration-300 backdrop-blur-sm text-center">
+                    Partner With Us
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-50 animate-bounce">
+            <span class="text-xs text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-widest">Scroll</span>
+            <svg class="w-4 h-4 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="py-32 px-6 md:px-12 relative bg-gray-100 dark:bg-brand-darker">
+        <!-- Subtle grid background -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmurlCtncmlkKSIvPjwvc3ZnPg==')] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-20 ecosystem-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-brand-dark dark:text-white tracking-tight">Three Pillars. <span class="text-brand-gold">Infinite Solutions.</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
+                    Our diverse verticals are designed to empower your business, enrich your mind, and nourish your life.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Digital Marketing -->
+                <div class="ecosystem-card relative group rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/5 p-6 sm:p-8 transition-all duration-500 hover:border-brand-blue/30 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-all duration-500 group-hover:bg-brand-blue/20"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-blue/10 text-brand-blue rounded-2xl flex items-center justify-center mb-8 border border-brand-blue/20 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-brand-dark dark:text-white group-hover:text-brand-blue transition-colors duration-300">Sahasra Bharat IT Solutions</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                            Propel your brand into the digital future. We deliver data-driven digital marketing, advanced IT solutions, and custom campaigns that guarantee measurable growth and ROI.
+                        </p>
+                        <a href="https://sahasrabharat.com/digitalmarketing/" target="_blank" class="inline-flex items-center text-brand-blue font-medium hover:text-brand-dark dark:hover:text-white transition-colors group/link">
+                            Discover Solutions 
+                            <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="ecosystem-card relative group rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/5 p-8 transition-all duration-500 hover:border-brand-green/30 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-all duration-500 group-hover:bg-brand-green/20"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-green/10 text-brand-green rounded-2xl flex items-center justify-center mb-8 border border-brand-green/20 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-brand-dark dark:text-white group-hover:text-brand-green transition-colors duration-300">Sahasra Bharat Edu Group</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                            Empowering minds for tomorrow. Our cutting-edge curriculum and industry-expert instructors provide the practical knowledge and advanced skills necessary to excel in a rapidly changing world.
+                        </p>
+                        <a href="https://sahasrabharat.com/edugroup/" target="_blank" class="inline-flex items-center text-brand-green font-medium hover:text-brand-dark dark:hover:text-white transition-colors group/link">
+                            Explore Courses
+                            <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Farms -->
+                <div class="ecosystem-card relative group rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/5 p-8 transition-all duration-500 hover:border-brand-bronze/30 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand-bronze/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-all duration-500 group-hover:bg-brand-bronze/20"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-bronze/10 text-brand-bronze rounded-2xl flex items-center justify-center mb-8 border border-brand-bronze/20 group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-brand-dark dark:text-white group-hover:text-brand-bronze transition-colors duration-300">Sahasra Bharat Farms</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                            Cultivating a sustainable future. We merge traditional farming wisdom with modern agricultural technology to deliver fresh, premium organic produce straight from our soil to your table.
+                        </p>
+                        <a href="https://sahasrabharatfarms.com/" target="_blank" class="inline-flex items-center text-brand-bronze font-medium hover:text-brand-dark dark:hover:text-white transition-colors group/link">
+                            View Harvest
+                            <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A-Z Solutions Detail Section -->
+    <section id="about" class="py-32 px-6 md:px-12 relative overflow-hidden bg-white dark:bg-brand-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-20 lg:gap-24">
+                
+                <div class="w-full lg:w-1/2 az-content text-center lg:text-left mb-12 lg:mb-0">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight">An Interconnected Ecosystem Designed for <span class="text-brand-gold">Synergy.</span></h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed font-light">
+                        At Sahasra Bharat, our sub-verticals don't just exist side-by-side; they multiply each other's value. We've built an infrastructure where every service feeds into the next, creating an unbreakable chain of success.
+                    </p>
+                    
+                    <div class="space-y-8 text-left max-w-md mx-auto lg:mx-0">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-brand-gold font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-brand-dark dark:text-white mb-2">Grow with Sahasra Bharat Farms</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Produce high-quality, sustainable goods utilizing our advanced agricultural networks.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-brand-green font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-brand-dark dark:text-white mb-2">Learn with Sahasra Bharat Edu Group</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Master the business acumen and technical skills required to manage and scale operations efficiently.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-brand-blue font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-brand-dark dark:text-white mb-2">Scale with Sahasra Bharat IT Solutions</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Take your product to a global audience with custom IT solutions and robust digital marketing strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 az-image relative flex justify-center py-20 lg:py-0 min-h-[400px] lg:min-h-0">
+                    <!-- Abstract glowing representation of interconnectedness -->
+                    <div class="relative w-full max-w-[280px] sm:max-w-[400px] aspect-square rounded-full border border-black/5 dark:border-white/5 flex items-center justify-center bg-gradient-to-br from-black/[0.02] dark:from-white/[0.02] to-transparent backdrop-blur-sm">
+                        <!-- Connecting lines (abstract) -->
+                        <svg class="absolute inset-0 w-full h-full text-brand-dark dark:text-black/5 dark:text-white/5" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2" />
+                            <circle cx="50" cy="50" r="32" fill="none" stroke="currentColor" stroke-width="0.5" />
+                        </svg>
+                        
+                        <!-- Floating nodes representing verticals -->
+                        <a href="https://sahasrabharat.com/digitalmarketing/" target="_blank" class="absolute top-[5%] left-[50%] -translate-x-1/2 w-16 h-16 rounded-full bg-brand-blue/20 border border-brand-blue/50 flex items-center justify-center shadow-[0_0_30px_rgba(0,122,255,0.3)] backdrop-blur-md animate-[bounce_4s_infinite] hover:scale-110 transition-transform cursor-pointer">
+                            <span class="text-brand-blue text-xs font-bold">Digital</span>
+                        </a>
+                        <a href="https://sahasrabharat.com/edugroup/" target="_blank" class="absolute bottom-[20%] left-[8%] w-16 h-16 rounded-full bg-brand-green/20 border border-brand-green/50 flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.3)] backdrop-blur-md animate-[bounce_4s_infinite_1s] hover:scale-110 transition-transform cursor-pointer">
+                            <span class="text-brand-green text-xs font-bold">Edu</span>
+                        </a>
+                        <a href="https://sahasrabharatfarms.com/" target="_blank" class="absolute bottom-[20%] right-[8%] w-16 h-16 rounded-full bg-brand-bronze/20 border border-brand-bronze/50 flex items-center justify-center shadow-[0_0_30px_rgba(205,127,50,0.3)] backdrop-blur-md animate-[bounce_4s_infinite_2s] hover:scale-110 transition-transform cursor-pointer">
+                            <span class="text-brand-bronze text-xs font-bold">Farms</span>
+                        </a>
+                        
+                        <!-- Center node -->
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-gold flex items-center justify-center text-brand-dark font-black text-xl sm:text-2xl shadow-[0_0_50px_rgba(212,175,55,0.4)] z-20 animate-pulse-slow">
+                            SB
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Walk Section -->
+    <section id="health-walk" class="py-32 px-6 md:px-12 relative bg-gradient-to-b from-[#fbf8f0] via-white to-gray-100 dark:from-[#0a0f1d] dark:via-[#090e1a] dark:to-[#070b15] overflow-hidden">
+        <!-- Background Orbs -->
+        <div class="absolute -top-24 right-0 w-[520px] h-[520px] bg-brand-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute -bottom-20 left-0 w-[420px] h-[420px] bg-brand-teal/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-20 health-header">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-teal/10 border border-brand-teal/20 text-xs font-semibold uppercase tracking-widest text-brand-teal dark:text-[#00c2af] mb-4">
+                    Daily Community Wellness
+                </div>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-brand-dark dark:text-white">
+                    Health Walk with <span class="text-gradient-gold">Sahasra Bharat</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mt-4 font-light leading-relaxed">
+                    One Step Today, A Healthier Tomorrow. Start your day with energy, built-in habits, and community wellness.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Flyer Preview Card (Span 5) -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-brand-teal via-brand-gold to-brand-green rounded-[2.5rem] opacity-30 blur-xl group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <div class="relative w-full max-w-[380px] rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 bg-white dark:bg-brand-dark cursor-zoom-in" onclick="openFlyerModal()">
+                        <img src="c93c85c7-7acb-4152-8460-bf43bd1fd89b.jpg" alt="Health Walk Flyer" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                            <span class="px-5 py-2.5 bg-white/90 backdrop-blur-md text-brand-dark font-semibold rounded-full text-sm shadow-lg flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6"/></svg>
+                                View Full Flyer
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Schedule, Benefits & Registration Form (Span 7) -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Schedule & Venue Details -->
+                    <div class="rounded-3xl bg-white/80 dark:bg-[#0a0f1d]/85 border border-black/5 dark:border-white/10 p-8 shadow-xl backdrop-blur-md">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-brand-navy dark:text-white flex items-center gap-2">
+                                    <svg class="w-6 h-6 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                    Walk Schedule
+                                </h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Wake up early & start your day right.</p>
+                            </div>
+                            <div class="px-6 py-4 rounded-2xl bg-gradient-to-r from-brand-navy to-brand-teal text-white shadow-lg flex items-center gap-3">
+                                <svg class="w-8 h-8 text-brand-gold animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                                <div>
+                                    <p class="text-xs text-white/80 uppercase tracking-widest font-semibold font-sans">Every Single Day</p>
+                                    <p class="text-xl font-bold font-sans">5:00 AM - 6:00 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="rounded-3xl bg-white/80 dark:bg-[#0a0f1d]/85 border border-black/5 dark:border-white/10 p-8 shadow-xl backdrop-blur-md">
+                        <h3 class="text-2xl font-bold text-brand-navy dark:text-white mb-6">Benefits of Joining</h3>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-teal/10 border border-brand-teal/20 text-brand-teal flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-brand-dark dark:text-white">Heart Health & Stamina</h4>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Improve cardiovascular fitness and stamina daily.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 text-brand-gold flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-brand-dark dark:text-white">Immunity & Well-Being</h4>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Boost immunity defense systems and general health.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-green/10 border border-brand-green/20 text-brand-green flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-brand-dark dark:text-white">Stress Relief & Positivity</h4>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Reduce stress, meditate, and clear your mind.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-brand-dark dark:text-white">Habits & United Community</h4>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Build daily routines and bond with your community.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Join the Walk Registration Form -->
+                    <form id="healthWalkForm" class="rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 p-8 md:p-10 shadow-2xl relative">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-teal/5 rounded-full blur-2xl pointer-events-none"></div>
+                        <h3 class="text-2xl font-bold text-brand-dark dark:text-white mb-2">Join the Walk</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">Register now to join the daily morning movement group.</p>
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2" for="healthWalkName">Full Name</label>
+                                <input id="healthWalkName" name="fullName" type="text" required class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-brand-dark dark:text-white focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all placeholder-gray-500" placeholder="Enter your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2" for="healthWalkWhatsapp">WhatsApp Number</label>
+                                <input id="healthWalkWhatsapp" name="whatsapp" type="tel" required class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-brand-dark dark:text-white focus:outline-none focus:border-brand-teal/50 focus:ring-1 focus:ring-brand-teal/50 transition-all placeholder-gray-500" placeholder="+91 95151 77993">
+                            </div>
+                        </div>
+
+                        <div id="healthWalkStatus" class="hidden mt-6 text-sm font-medium text-center rounded-xl p-4"></div>
+
+                        <button type="submit" class="mt-6 w-full inline-flex items-center justify-center px-6 py-4 bg-brand-teal text-white hover:bg-[#006e64] font-bold rounded-xl transition-all shadow-md hover:shadow-lg">
+                            Register & Join Walk
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Flyer Footnotes/Pillars Banner -->
+            <div class="mt-20 pt-10 border-t border-black/5 dark:border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="flex flex-col items-center p-4 bg-white/50 dark:bg-[#0a0f1d]/50 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-3">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark dark:text-white text-base">Wake Up Early</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Start your day right</p>
+                </div>
+
+                <div class="flex flex-col items-center p-4 bg-white/50 dark:bg-[#0a0f1d]/50 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-brand-teal/10 border border-brand-teal/20 flex items-center justify-center text-brand-teal mb-3">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5H9.043a1 1 0 00-.957.706L7 9.5M17 19.5l-2-4L11 12M9 13.5l1.5-2.5m.5 1.5l1.5-2.5M10.5 8.5a1 1 0 100-2 1 1 0 000 2zM15 15h3.5" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark dark:text-white text-base">Walk Daily</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Make it a habit</p>
+                </div>
+
+                <div class="flex flex-col items-center p-4 bg-white/50 dark:bg-[#0a0f1d]/50 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-brand-green/10 border border-brand-green/20 flex items-center justify-center text-brand-green mb-3">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark dark:text-white text-base">Stay Healthy</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Stay fit, stay happy</p>
+                </div>
+
+                <div class="flex flex-col items-center p-4 bg-white/50 dark:bg-[#0a0f1d]/50 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue mb-3">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark dark:text-white text-base">Stay United</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Stronger together</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Blog Section -->
+    <section id="blog" class="py-32 px-6 md:px-12 relative bg-white dark:bg-brand-dark border-t border-black/5 dark:border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 blog-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-brand-dark dark:text-white tracking-tight">Daily Blog <span class="text-brand-gold">Space</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto font-light">
+                    Fresh articles on wellness, education insights, and sustainable farming. I will be writing daily content here.
+                </p>
+            </div>
+
+            <!-- Blog Grid (Dynamic) -->
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dynamically loaded blog cards go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Reading Modal -->
+    <div id="blogReadModal" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 rounded-[2rem] max-w-2xl w-full p-8 md:p-10 shadow-2xl relative max-h-[85vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <button class="absolute top-6 right-6 text-gray-500 hover:text-brand-dark dark:hover:text-white text-3xl font-bold cursor-pointer" onclick="closeBlogReadModal()">&times;</button>
+            <div id="blogModalContent">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for Flyer -->
+    <div id="flyerModal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 cursor-zoom-out" onclick="closeFlyerModal()">
+        <button class="absolute top-6 right-6 text-white hover:text-brand-gold text-4xl font-bold cursor-pointer transition-colors" onclick="closeFlyerModal()">&times;</button>
+        <img src="c93c85c7-7acb-4152-8460-bf43bd1fd89b.jpg" alt="Health Walk Flyer Full Size" class="max-w-full max-h-[90vh] object-contain rounded-xl border border-white/10 shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Farm Partners Section -->
+    <section id="farm-partners" class="py-32 px-6 md:px-12 relative bg-gray-100 dark:bg-[#070b15] border-t border-black/5 dark:border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 farm-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-brand-dark dark:text-white tracking-tight">Our Farm <span class="text-brand-gold">Partners</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto font-light">
+                    We collaborate with local farmers, providing technology, certifications, and market access to scale organic farming.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- My Harvest Farms Partner Card -->
+                <div class="rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 p-8 shadow-xl relative overflow-hidden group">
+                    <div class="absolute -right-16 -top-16 w-40 h-40 bg-brand-gold/5 rounded-full blur-2xl group-hover:bg-brand-gold/10 transition-colors"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-brand-bronze/10 border border-brand-bronze/30 flex items-center justify-center text-brand-bronze font-bold text-xl">MF</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark dark:text-white">My Harvest Farms</h3>
+                            <p class="text-sm font-semibold text-brand-gold">50-Acre Partnership</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-6">
+                        A collaborative initiative practicing pure organic cultivation. Our partnership combines modern agricultural intelligence with local farming networks to provide healthy, direct-to-consumer harvests.
+                    </p>
+                    <h4 class="font-bold text-brand-dark dark:text-white text-sm uppercase tracking-wider mb-4">Key Aspects</h4>
+                    <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5">✔</span>
+                            <div>
+                                <strong class="text-brand-dark dark:text-white block">Organic Practices</strong>
+                                <span>Zero-chemical farming methodologies and eco-friendly soil maintenance.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5">✔</span>
+                            <div>
+                                <strong class="text-brand-dark dark:text-white block">Market Access</strong>
+                                <span>Direct supply chain linkages to ensure fair pricing and fresh delivery.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5">✔</span>
+                            <div>
+                                <strong class="text-brand-dark dark:text-white block">Expert Support</strong>
+                                <span>On-ground agricultural consulting and modern technical crop guidance.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-32 px-6 md:px-12 relative bg-white dark:bg-brand-dark border-t border-black/5 dark:border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 edu-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-brand-dark dark:text-white tracking-tight">Sahasra Bharat <span class="text-brand-gold">Education</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto font-light">
+                    Upskill yourself with modern curriculum categories designed to create industry leaders.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <!-- Left: Course categories -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Science -->
+                    <div class="rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 p-6 shadow-xl flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 rounded-[1.25rem] bg-red-600 flex items-center justify-center text-white mb-4 shadow-[0_8px_16px_rgba(220,38,38,0.2)]">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16.3 11a6 6 0 1 1-8.6 0v-6h8.6z" />
+                                <path d="M9 5h6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-extrabold uppercase tracking-widest text-red-600 mb-2">SCIENCE</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Physics, Chemistry, Biology, and related subjects</p>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 p-6 shadow-xl flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 rounded-[1.25rem] bg-red-600 flex items-center justify-center text-white mb-4 shadow-[0_8px_16px_rgba(220,38,38,0.2)]">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                                <line x1="9" y1="9" x2="9" y2="9.01" stroke-width="3" />
+                                <line x1="15" y1="9" x2="15" y2="9.01" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-extrabold uppercase tracking-widest text-red-600 mb-2">SOFT SKILLS</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Communication, Leadership, and Professional Development</p>
+                    </div>
+
+                    <!-- Arts -->
+                    <div class="rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 p-6 shadow-xl flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 rounded-[1.25rem] bg-red-600 flex items-center justify-center text-white mb-4 shadow-[0_8px_16px_rgba(220,38,38,0.2)]">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22C17.52 22 22 17.52 22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 2.21.79 4.24 2.1 5.84l.01.01.01.01C5.76 19.64 8.7 21 12 21z" />
+                                <circle cx="8" cy="9" r="1.5" />
+                                <circle cx="12" cy="7" r="1.5" />
+                                <circle cx="16" cy="9" r="1.5" />
+                                <circle cx="15" cy="14" r="1.5" />
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-extrabold uppercase tracking-widest text-red-600 mb-2">ARTS</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">History, Geography, Political Science, and related subjects</p>
+                    </div>
+
+                    <!-- Technical Skills -->
+                    <div class="rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 p-6 shadow-xl flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 rounded-[1.25rem] bg-red-600 flex items-center justify-center text-white mb-4 shadow-[0_8px_16px_rgba(220,38,38,0.2)]">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1" />
+                                <path d="M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1" />
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-extrabold uppercase tracking-widest text-red-600 mb-2">TECHNICAL SKILLS</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Programming, Web Development, and IT courses</p>
+                    </div>
+                </div>
+
+                <!-- Right: Inquire Form -->
+                <form id="educationInquiryForm" class="rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 p-8 md:p-10 shadow-2xl relative">
+                    <h3 class="text-2xl font-bold text-brand-dark dark:text-white mb-2">Inquire About Courses</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">Select your course interest, enter your details, and redirect straight to our WhatsApp chat.</p>
+
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2" for="educationName">Full Name</label>
+                            <input id="educationName" name="fullName" type="text" required class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-brand-dark dark:text-white focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-all placeholder-gray-500" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2" for="educationCourse">Course Category</label>
+                            <div class="relative">
+                                <select id="educationCourse" name="course" required class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-brand-dark dark:text-white focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-all appearance-none cursor-pointer">
+                                    <option value="Science" class="bg-white dark:bg-brand-dark text-brand-dark dark:text-white">Science</option>
+                                    <option value="Soft Skills" class="bg-white dark:bg-brand-dark text-brand-dark dark:text-white">Soft Skills</option>
+                                    <option value="Arts" class="bg-white dark:bg-brand-dark text-brand-dark dark:text-white">Arts</option>
+                                    <option value="Technical Skills" class="bg-white dark:bg-brand-dark text-brand-dark dark:text-white">Technical Skills</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-gray-500">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="mt-6 w-full inline-flex items-center justify-center px-6 py-4 bg-brand-green text-white hover:bg-[#0a3524] font-bold rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.57 1.977 14.1 1.053 11.998 1.053c-5.44 0-9.866 4.372-9.87 9.802 0 1.714.47 3.387 1.363 4.9l-.999 3.65 3.555-.951zM17.47 15.3c-.3-.15-1.77-.874-2.04-.972-.27-.1-.47-.15-.67.15-.2.3-.77.973-.94 1.17-.18.2-.35.22-.65.07-1.15-.573-1.92-1.011-2.67-2.302-.19-.32-.19-.52.01-.7.18-.16.4-.47.6-.7.2-.23.27-.38.4-.65.13-.27.07-.5-.03-.7-.1-.2-.8-1.92-1.1-2.62-.29-.7-.59-.6-.8-.6h-.69c-.24 0-.62.09-.95.45-.33.36-1.25 1.22-1.25 2.98 0 1.76 1.28 3.46 1.46 3.7.18.24 2.52 3.85 6.1 5.4 2.37 1.03 3.38 1.05 4.59.87.59-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.3-.27-.6-.42z"/></svg>
+                        Inquire on WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 md:px-12 relative bg-gray-100 dark:bg-[#070b15] overflow-hidden border-t border-black/5 dark:border-white/5">
+        <!-- Abstract Background -->
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-brand-gold/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 contact-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-brand-dark dark:text-white tracking-tight">Get in <span class="text-brand-gold">Touch.</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto font-light">
+                    Ready to elevate your business? Reach out to our experts and let's build something extraordinary together.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto contact-form">
+                <form id="contactForm" class="bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden group">
+                    <!-- Subtle hover glow on form -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/10 to-brand-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Hidden field for Apps Script metadata -->
+                        <input type="hidden" name="_Form_Name" value="Sahasra Landing Page Form">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Full Name</label>
+                                <input type="text" id="name" name="Full_Name" required class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-brand-dark dark:text-white focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors placeholder-gray-600" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Email Address</label>
+                                <input type="email" id="email" name="Email_Address" required class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-brand-dark dark:text-white focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors placeholder-gray-600" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div class="mb-8 relative">
+                            <label for="interest" class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Area of Interest</label>
+                            <select id="interest" name="Area_of_Interest" class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-brand-dark dark:text-white focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors appearance-none">
+                                <option value="Digital Marketing" class="bg-white dark:bg-brand-dark text-brand-dark dark:text-white">Digital Marketing</option>
+                                <option value="Education" class="bg-white dark:bg-brand-dark text-brand-dark dark:text-white">Education</option>
+                                <option value="Farms" class="bg-white dark:bg-brand-dark text-brand-dark dark:text-white">Farms</option>
+                                <option value="Other" class="bg-white dark:bg-brand-dark text-brand-dark dark:text-white">Other</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 top-7 flex items-center px-5 text-gray-600 dark:text-gray-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <label for="message" class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Your Message</label>
+                            <textarea id="message" name="Message" rows="4" required class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-brand-dark dark:text-white focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors resize-none placeholder-gray-600" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <!-- Form Status Messages -->
+                        <div id="formStatus" class="hidden mb-6 p-4 rounded-xl text-sm font-medium text-center"></div>
+
+                        <button type="submit" id="submitBtn" class="w-full relative group/btn inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-brand-dark transition-all duration-300 bg-brand-gold border border-transparent rounded-xl hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-gold focus:ring-offset-[#0a0f1d] disabled:opacity-70 disabled:cursor-wait">
+                            <span id="submitText">Send Message</span>
+                            <svg id="submitSpinner" class="hidden w-5 h-5 ml-2 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <div class="absolute inset-0 rounded-xl group-hover/btn:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-shadow duration-300 pointer-events-none"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 dark:bg-[#050810] pt-20 pb-10 px-6 md:px-12 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="1040562c-115a-4e7c-a091-25a3c9c55014.jpg" alt="Sahasra Bharat Logo" class="w-10 h-10 rounded-full object-cover border border-brand-gold/30">
+                        <span class="font-bold text-xl text-brand-dark dark:text-white">Sahasra Bharat</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-sm mb-8">
+                        The ultimate A to Z ecosystem. We integrate wellness, education, and agriculture into a singular powerhouse of community innovation.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/sahasrabharat" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-brand-gold hover:text-brand-dark transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/company/sahasra-bharat" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-brand-gold hover:text-brand-dark transition-colors" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-brand-dark dark:text-white font-semibold mb-6">Ecosystem</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://sahasrabharat.com/digitalmarketing/" target="_blank" class="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-blue transition-colors">Digital Marketing</a></li>
+                        <li><a href="https://sahasrabharat.com/edugroup/" target="_blank" class="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-green transition-colors">Education</a></li>
+                        <li><a href="https://sahasrabharatfarms.com/" target="_blank" class="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-bronze transition-colors">Farms</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-brand-dark dark:text-white font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-dark dark:hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-dark dark:hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-dark dark:hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-brand-dark dark:hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-brand-dark dark:text-white font-semibold mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+                        <li>
+                            <span class="block text-xs font-semibold text-brand-gold uppercase tracking-wider mb-1">Email</span>
+                            <a href="mailto:sahasrabharat@gmail.com" class="hover:text-brand-dark dark:hover:text-white transition-colors break-all">sahasrabharat@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="block text-xs font-semibold text-brand-gold uppercase tracking-wider mb-1">Phone</span>
+                            <a href="tel:+919515177993" class="hover:text-brand-dark dark:hover:text-white transition-colors">+91 9515177993</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-black/5 dark:border-white/5 flex flex-col md:flex-row items-center justify-center gap-4">
+                <p class="text-sm text-gray-500 dark:text-gray-400">© 2026 Sahasra Bharat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Custom Logic -->
+    <script>
+        // 1. Three.js Background Implementation (Enhanced with Mixed Colors, Breathing Waves, and Parallax)
+        const initThreeJS = () => {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            
+            scene.fog = new THREE.FogExp2(0x0a0f1d, 0.001);
+
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 300;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+
+            // Create particles (Constellation style)
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = window.innerWidth < 768 ? 800 : 2000;
+            
+            const posArray = new Float32Array(particlesCount * 3);
+            const scaleArray = new Float32Array(particlesCount);
+            const colorsArray = new Float32Array(particlesCount * 3);
+            
+            const colorGold = new THREE.Color(0xD4AF37); // Brand Gold
+            const colorTeal = new THREE.Color(0x008276); // Flyer Teal
+            const colorGreen = new THREE.Color(0x13543A); // Forest Green
+            
+            for(let i = 0; i < particlesCount * 3; i+=3) {
+                // Sphere distribution
+                const r = 400 * Math.cbrt(Math.random());
+                const theta = Math.random() * 2 * Math.PI;
+                const phi = Math.acos(2 * Math.random() - 1);
+                
+                posArray[i] = r * Math.sin(phi) * Math.cos(theta);
+                posArray[i+1] = r * Math.sin(phi) * Math.sin(theta);
+                posArray[i+2] = r * Math.cos(phi);
+                
+                scaleArray[i/3] = Math.random();
+                
+                // Color mixture: 45% Gold, 45% Teal, 10% Forest Green
+                const rand = Math.random();
+                let chosenColor = colorGold;
+                if (rand > 0.45 && rand <= 0.90) {
+                    chosenColor = colorTeal;
+                } else if (rand > 0.90) {
+                    chosenColor = colorGreen;
+                }
+                
+                colorsArray[i] = chosenColor.r;
+                colorsArray[i+1] = chosenColor.g;
+                colorsArray[i+2] = chosenColor.b;
+            }
+            
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            particlesGeometry.setAttribute('aScale', new THREE.BufferAttribute(scaleArray, 1));
+            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorsArray, 3));
+            
+            // Create circular texture for particles
+            const canvas = document.createElement('canvas');
+            canvas.width = 32;
+            canvas.height = 32;
+            const ctx = canvas.getContext('2d');
+            const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+            gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+            gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 32, 32);
+            const particleTexture = new THREE.CanvasTexture(canvas);
+
+            const particlesMaterial = new THREE.PointsMaterial({
+                size: 2.2,
+                map: particleTexture,
+                transparent: true,
+                opacity: 0.85,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false,
+                vertexColors: true // Enables individual particle colors
+            });
+            
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particlesMesh);
+
+            // Interactivity
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetX = 0;
+            let targetY = 0;
+            
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
+
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX - windowHalfX);
+                mouseY = (event.clientY - windowHalfY);
+            });
+
+            // Parallax scroll listener
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                particlesMesh.position.y = -scrollY * 0.12; // Parallax drift
+            });
+
+            // Animation Loop
+            const clock = new THREE.Clock();
+            
+            const animate = () => {
+                requestAnimationFrame(animate);
+                
+                const elapsedTime = clock.getElapsedTime();
+                
+                // Breathing organic waving
+                particlesMesh.position.x = Math.sin(elapsedTime * 0.4) * 8;
+                
+                // Slow rotation
+                particlesMesh.rotation.y = elapsedTime * 0.025;
+                particlesMesh.rotation.x = elapsedTime * 0.01;
+                
+                // Mouse interaction with easing
+                targetX = mouseX * 0.0006;
+                targetY = mouseY * 0.0006;
+                
+                particlesMesh.rotation.y += 0.05 * (targetX - particlesMesh.rotation.y);
+                particlesMesh.rotation.x += 0.05 * (targetY - particlesMesh.rotation.x);
+                
+                renderer.render(scene, camera);
+            };
+            
+            animate();
+
+            // Resize handler
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        };
+
+        // Initialize ThreeJS
+        try {
+            initThreeJS();
+        } catch(e) {
+            console.log("WebGL not supported, falling back to static CSS design");
+        }
+
+        // ============================================
+        // BLOG SYSTEM DYNAMIC INTEGRATION
+        // ============================================
+        
+        const defaultBlogs = [
+            {
+                id: 1,
+                title: "Embracing Health in Daily Life",
+                date: "Jun 03, 2026",
+                category: "health",
+                excerpt: "Discover simple yet powerful ways to incorporate wellness into your everyday routine, from morning walks to balanced nutrition.",
+                color: "from-brand-gold/20 to-brand-teal/20",
+                content: "Embracing health in daily life doesn't require a complete lifestyle overhaul. In fact, sustainable health is built on small, consistent choices. Incorporating a daily walk—like the Sahasra Bharat morning walk from 5:00 AM to 6:00 AM—boosts cardiovascular stamina, reduces cortisol (stress levels), and sets a positive tone for the rest of your day.\n\nPair this with balanced, organic nutrition straight from local farms, and you create a resilient wellness foundation. Walking regularly improves sleep quality, boosts endorphins, and provides vital immune system stimulation. Starting your day together with a supportive community adds an element of social connection and accountability, making it a joyful habit rather than a chore."
+            },
+            {
+                id: 2,
+                title: "Modern Farming Techniques",
+                date: "May 28, 2026",
+                category: "agriculture",
+                excerpt: "Explore sustainable agricultural practices that maximize yield while preserving our environment for future generations.",
+                color: "from-brand-bronze/20 to-brand-gold/20",
+                content: "Modern farming stands at a unique crossroads: we must feed a growing population while protecting our planetary resources. By merging traditional knowledge with agricultural technology, partners like My Harvest Farms are demonstrating how 50-acre setups can thrive using pure organic inputs, soil aeration mapping, and smart irrigation.\n\nSustainable agriculture focuses on long-term soil health, utilizing crop rotation, natural pest management, and vermicomposting instead of chemical fertilizers. This not only preserves the ecology of the soil but also yields crops with significantly higher nutrient density. By building clean farm-to-table networks, we ensure fair returns for farm partners and chemical-free, premium produce for consumers."
+            },
+            {
+                id: 3,
+                title: "Digital Transformation Guide",
+                date: "May 25, 2026",
+                category: "technology",
+                excerpt: "Learn how businesses can leverage digital tools to streamline operations and reach wider audiences in the modern marketplace.",
+                color: "from-brand-blue/20 to-brand-green/20",
+                content: "Digital transformation is no longer a luxury reserved for tech giants. For small businesses, local farm networks, and educational ecosystems, digital integration is the key to scaling impact. From automating customer outreach to optimizing logistics pipelines and utilizing performance marketing, technology enables us to deliver services more efficiently.\n\nEmbracing web portals, instant messaging pipelines (like WhatsApp business routes), and cloud-managed databases forms the backbone of the modern digital-first economy. Businesses that transition their operations online see increased tracking efficiency, better communication speeds, and a much broader geographical market reach."
+            }
+        ];
+
+        const loadBlogPosts = async () => {
+            const blogGrid = document.getElementById('blog-grid');
+            if (!blogGrid) return;
+            
+            let blogs = [];
+            let loadedSuccessfully = false;
+
+            // 1. Try to load from database via PHP API
+            try {
+                const response = await fetch('api.php?action=get_blogs&t=' + Date.now());
+                if (response.ok) {
+                    const data = await response.json();
+                    blogs = data.blogs || [];
+                    loadedSuccessfully = true;
+                }
+            } catch (e) {
+                console.log("PHP backend not active, trying static files...");
+            }
+            
+            // 2. Try to fetch from blog-data.json if DB query failed
+            if (!loadedSuccessfully) {
+                try {
+                    const response = await fetch('blog-data.json?t=' + Date.now());
+                    if (response.ok) {
+                        const data = await response.json();
+                        blogs = data.blogs || [];
+                        loadedSuccessfully = true;
+                    }
+                } catch (e) {
+                    console.error("Failed to fetch blog-data.json", e);
+                }
+            }
+            
+            // 3. Fallback to default hardcoded blogs if both failed
+            if (!loadedSuccessfully) {
+                blogs = defaultBlogs;
+            }
+
+            if (blogs.length === 0) {
+                blogGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <p class="text-gray-500 dark:text-gray-400">No blog posts published yet.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Render the cards
+            blogGrid.innerHTML = blogs.slice(0, 3).map(post => {
+                const categoryMap = {
+                    health: "Health & Wellness",
+                    agriculture: "Agriculture",
+                    education: "Education",
+                    business: "Business",
+                    technology: "Technology & IT",
+                    general: "General"
+                };
+                const badgeText = categoryMap[post.category] || post.category || "General";
+                const postColor = post.color || "from-brand-gold/20 to-brand-green/20";
+                
+                return `
+                    <article class="rounded-3xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                        <div class="h-48 bg-gradient-to-br ${postColor} relative overflow-hidden flex items-center justify-center">
+                            ${post.image ? 
+                              `<img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover">` : 
+                              `<svg class="w-12 h-12 text-black/10 dark:text-white/10" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0-2-.9-2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>`
+                            }
+                            <span class="absolute top-4 left-4 px-3 py-1 bg-white/95 dark:bg-brand-dark/95 backdrop-blur-md rounded-full text-xs font-bold text-brand-dark dark:text-brand-gold shadow-sm uppercase tracking-wider">${badgeText}</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <p class="text-xs text-gray-400 mb-2">${post.date || 'June 03, 2026'}</p>
+                            <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3 hover:text-brand-gold transition-colors leading-snug">${post.title}</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 flex-1">${post.excerpt}</p>
+                            <button onclick="openBlogReadModal(${post.id})" class="inline-flex items-center text-brand-gold font-bold hover:text-yellow-500 transition-colors group/link mt-auto w-fit">
+                                Read More
+                                <svg class="w-4 h-4 ml-1.5 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+
+            window.loadedBlogs = blogs;
+        };
+
+        const openBlogReadModal = (id) => {
+            const modal = document.getElementById('blogReadModal');
+            const contentContainer = document.getElementById('blogModalContent');
+            if (!modal || !contentContainer || !window.loadedBlogs) return;
+            
+            const post = window.loadedBlogs.find(b => b.id == id);
+            if (!post) return;
+            
+            const categoryMap = {
+                health: "Health & Wellness",
+                agriculture: "Agriculture",
+                education: "Education",
+                business: "Business",
+                technology: "Technology & IT",
+                general: "General"
+            };
+            const badgeText = categoryMap[post.category] || post.category || "General";
+            
+            contentContainer.innerHTML = `
+                <span class="px-3 py-1 bg-brand-gold/10 border border-brand-gold/20 text-brand-gold rounded-full text-xs font-bold uppercase tracking-wider">${badgeText}</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark dark:text-white mt-4 mb-2">${post.title}</h2>
+                <p class="text-xs text-gray-400 mb-6">${post.date || 'June 03, 2026'}</p>
+                
+                ${post.image ? `<div class="w-full h-64 rounded-2xl overflow-hidden mb-6"><img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover"></div>` : ''}
+                
+                <div class="text-gray-600 dark:text-gray-300 leading-relaxed text-base space-y-4 whitespace-pre-line font-light">
+                    ${post.content || post.excerpt}
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeBlogReadModal = () => {
+            const modal = document.getElementById('blogReadModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        };
+
+        // Lightbox Modal Controls for Health Walk Flyer
+        const openFlyerModal = () => {
+            const modal = document.getElementById('flyerModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        };
+
+        const closeFlyerModal = () => {
+            const modal = document.getElementById('flyerModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        };
+
+        // 2. GSAP Animations
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Initial Load Blog grid
+            loadBlogPosts();
+
+            // Initial Loader / Hero Animation
+            const heroTl = gsap.timeline();
+            
+            heroTl.from(".hero-content > *", {
+                y: 40,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "power3.out",
+                delay: 0.2
+            });
+
+            // Ecosystem Section Animations
+            gsap.from(".ecosystem-header", {
+                scrollTrigger: {
+                    trigger: "#ecosystem",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+
+            // Staggered Cards
+            gsap.utils.toArray('.ecosystem-card').forEach((card, index) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                    },
+                    y: 60,
+                    opacity: 0,
+                    duration: 0.8,
+                    delay: index * 0.15,
+                    ease: "back.out(1.2)"
+                });
+            });
+
+            // A-Z Solutions Section
+            gsap.from(".az-content > *", {
+                scrollTrigger: {
+                    trigger: "#about",
+                    start: "top 75%",
+                },
+                x: -40,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+
+            gsap.from(".az-image", {
+                scrollTrigger: {
+                    trigger: "#about",
+                    start: "top 75%",
+                },
+                scale: 0.9,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power3.out",
+                delay: 0.3
+            });
+
+            // Health Section Animations
+            gsap.from(".health-header", {
+                scrollTrigger: {
+                    trigger: "#health-walk",
+                    start: "top 80%",
+                },
+                y: 35,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+
+            // Farm Section Animations
+            gsap.from(".farm-header", {
+                scrollTrigger: {
+                    trigger: "#farm-partners",
+                    start: "top 80%",
+                },
+                y: 35,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+
+            // Education Section Animations
+            gsap.from(".edu-header", {
+                scrollTrigger: {
+                    trigger: "#education",
+                    start: "top 80%",
+                },
+                y: 35,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+
+            // Contact Section Animations
+            gsap.from(".contact-header", {
+                scrollTrigger: {
+                    trigger: "#contact",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+
+            gsap.from(".contact-form", {
+                scrollTrigger: {
+                    trigger: "#contact",
+                    start: "top 75%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+                delay: 0.2
+            });
+
+            // ============================================
+            // SUBMISSIONS AND REDIRECTION HANDLERS
+            // ============================================
+
+            // 1. Health Walk Registration Form
+            const healthForm = document.getElementById('healthWalkForm');
+            if (healthForm) {
+                healthForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('healthWalkName').value;
+                    const whatsapp = document.getElementById('healthWalkWhatsapp').value;
+                    const statusDiv = document.getElementById('healthWalkStatus');
+                    
+                    try {
+                        const subData = {
+                            id: Date.now().toString(),
+                            fullName: name,
+                            whatsapp: whatsapp,
+                            date: new Date().toLocaleString('en-IN')
+                        };
+
+                        // Post to DB via PHP backend
+                        fetch('api.php?action=save_submission', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(subData)
+                        })
+                        .then(res => {
+                            if (res.ok) {
+                                statusDiv.textContent = '✅ Success! You have joined the walk group. We will contact you soon.';
+                                statusDiv.className = 'mt-6 p-4 rounded-xl text-sm font-semibold bg-green-500/10 text-green-400 border border-green-500/20 text-center';
+                                statusDiv.classList.remove('hidden');
+                                healthForm.reset();
+                                setTimeout(() => { statusDiv.classList.add('hidden'); }, 6000);
+                            } else {
+                                throw new Error('Database save failed');
+                            }
+                        })
+                        .catch(err => {
+                            console.error('PHP server error', err);
+                            statusDiv.textContent = '❌ An error occurred. Please try again.';
+                            statusDiv.className = 'mt-6 p-4 rounded-xl text-sm font-semibold bg-red-500/10 text-red-400 border border-red-500/20 text-center';
+                            statusDiv.classList.remove('hidden');
+                        });
+                    } catch (err) {
+                        console.error(err);
+                        statusDiv.textContent = '❌ An error occurred. Please try again.';
+                        statusDiv.className = 'mt-6 p-4 rounded-xl text-sm font-semibold bg-red-500/10 text-red-400 border border-red-500/20 text-center';
+                        statusDiv.classList.remove('hidden');
+                    }
+                });
+            }
+
+
+
+            // 3. Education Course Inquiry (WhatsApp Redirection)
+            const eduForm = document.getElementById('educationInquiryForm');
+            if (eduForm) {
+                eduForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('educationName').value;
+                    const course = document.getElementById('educationCourse').value;
+                    const encodedText = encodeURIComponent(`Hi, I am interested in ${course}. My name is ${name}.`);
+                    const whatsappUrl = `https://wa.me/919515177993?text=${encodedText}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+
+            // 4. Contact Form Submission Logic (Google Apps Script)
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = document.getElementById('submitBtn');
+                    const submitText = document.getElementById('submitText');
+                    const submitSpinner = document.getElementById('submitSpinner');
+                    const formStatus = document.getElementById('formStatus');
+                    
+                    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHgYwvklnMadm955mWDNuixgdqHIx6JyGsY3nM7HeeZDZFIsOlv1NBoyyKG978ubCW/exec';
+
+                    submitBtn.disabled = true;
+                    submitText.textContent = 'Sending...';
+                    submitSpinner.classList.remove('hidden');
+                    formStatus.classList.add('hidden');
+                    
+                    const formData = new FormData(contactForm);
+                    formData.append('_Form_Source', window.location.href);
+                    formData.append('_Timestamp', new Date().toLocaleString());
+                    
+                    fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors'
+                    })
+                    .then(response => {
+                        formStatus.textContent = '✅ Message sent successfully! We will get back to you soon.';
+                        formStatus.className = 'mb-6 p-4 rounded-xl text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20 text-center';
+                        formStatus.classList.remove('hidden');
+                        contactForm.reset();
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        formStatus.textContent = '❌ Oops! Something went wrong. Please try again.';
+                        formStatus.className = 'mb-6 p-4 rounded-xl text-sm font-medium bg-red-500/10 text-red-400 border border-red-500/20 text-center';
+                        formStatus.classList.remove('hidden');
+                    })
+                    .finally(() => {
+                        submitBtn.disabled = false;
+                        submitText.textContent = 'Send Message';
+                        submitSpinner.classList.add('hidden');
+                        
+                        setTimeout(() => {
+                            if(formStatus.classList.contains('text-green-400')) {
+                                formStatus.classList.add('hidden');
+                            }
+                        }, 5000);
+                    });
+                });
+            }
+
+            // Navbar Scroll Effect
+            const header = document.querySelector('header');
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('header-scrolled');
+                    nav.classList.add('nav-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                    nav.classList.remove('nav-scrolled');
+                }
+            });
+
+            // Mobile Menu Logic
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            
+            let isMenuOpen = false;
+
+            const toggleMenu = (state) => {
+                isMenuOpen = typeof state === 'boolean' ? state : !isMenuOpen;
+                
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                    
+                    gsap.fromTo(".mobile-nav-link", 
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out", delay: 0.2 }
+                    );
+                } else {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            mobileMenuButton.addEventListener('click', () => toggleMenu(true));
+            mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => toggleMenu(false));
+            });
+
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    toggleMenu(false);
+                }
+            });
+        });
+    </script>
+
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+        <!-- Sun icon for light mode -->
+        <svg id="sunIcon" class="w-6 h-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <!-- Moon icon for dark mode -->
+        <svg id="moonIcon" class="w-6 h-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+    </button>
+    <script>
+        // Check for saved theme preference or use system preference
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+
+    <!-- Mobile Menu (Root Level for z-index reliability) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-[#0a0f1d] z-[100] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col items-center justify-center">
+        <!-- Close Button -->
+        <button id="mobile-menu-close" class="absolute top-8 right-8 p-3 text-gray-700 dark:text-gray-300 hover:text-brand-dark dark:hover:text-white focus:outline-none transition-transform hover:rotate-90 duration-300" aria-label="Close menu">
+            <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div class="flex flex-col items-center space-y-6 max-h-[85vh] overflow-y-auto w-full py-8">
+            <a href="#home" class="mobile-nav-link text-2xl font-bold text-gray-800 dark:text-white hover:text-brand-gold transition-all duration-300">Home</a>
+            <a href="#ecosystem" class="mobile-nav-link text-2xl font-bold text-gray-800 dark:text-white hover:text-brand-gold transition-all duration-300">Ecosystem</a>
+            <a href="#health-walk" class="mobile-nav-link text-2xl font-bold text-gray-800 dark:text-white hover:text-brand-gold transition-all duration-300">Health Walk</a>
+            <a href="#blog" class="mobile-nav-link text-2xl font-bold text-gray-800 dark:text-white hover:text-brand-gold transition-all duration-300">Blog</a>
+            <a href="#farm-partners" class="mobile-nav-link text-2xl font-bold text-gray-800 dark:text-white hover:text-brand-gold transition-all duration-300">Farms</a>
+            <a href="#education" class="mobile-nav-link text-2xl font-bold text-gray-800 dark:text-white hover:text-brand-gold transition-all duration-300">Education</a>
+            <a href="#about" class="mobile-nav-link text-2xl font-bold text-gray-800 dark:text-white hover:text-brand-gold transition-all duration-300">About</a>
+            <a href="#contact" class="mobile-nav-link text-2xl font-bold text-gray-800 dark:text-white hover:text-brand-gold transition-all duration-300">Contact</a>
+            
+            <a href="#contact" class="mobile-nav-link mt-4 px-8 py-3 text-lg font-bold text-brand-dark bg-brand-gold rounded-full hover:bg-yellow-400 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                Get Started
+            </a>
+
+            <!-- Mobile Social Icons -->
+            <div class="flex gap-6 mt-12 pt-8 border-t border-black/10 dark:border-white/10 w-full justify-center">
+                <a href="https://instagram.com/sahasrabharat" target="_blank" rel="noreferrer" class="text-gray-500 hover:text-brand-gold transition-colors" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://linkedin.com/company/sahasra-bharat" target="_blank" rel="noreferrer" class="text-gray-500 hover:text-brand-gold transition-colors" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

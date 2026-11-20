@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahasra Bharat - Admin Panel</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a0f1d',
+                            darker: '#050810',
+                            gold: '#D4AF37',
+                            blue: '#007AFF',
+                            green: '#10B981',
+                            red: '#EF4444',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Admin CSS -->
+    <style>
+        :root {
+            color-scheme: light;
+        }
+        .dark {
+            color-scheme: dark;
+        }
+        select option {
+            background-color: white;
+            color: #0a0f1d;
+        }
+        .dark select option {
+            background-color: #0f1624;
+            color: white;
+        }
+        body {
+            background-color: #f9fafb;
+            color: #0a0f1d;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .dark body {
+            background-color: #0a0f1d;
+            color: white;
+        }
+
+        .admin-container {
+            display: grid;
+            grid-template-columns: 280px minmax(0, 1fr);
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .sidebar {
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            position: fixed;
+            width: 280px;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 40;
+        }
+
+        .dark .sidebar {
+            background: #0a0f1d;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .main-content {
+            margin-left: 0;
+            padding: 2rem;
+            background: #f9fafb;
+            min-height: 100vh;
+            min-width: 0;
+            grid-column: 2 / -1;
+            width: 100%;
+        }
+
+        .dark .main-content {
+            background: #050810;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            margin: 4px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            background: #f3f4f6;
+            color: #0a0f1d;
+        }
+
+        .dark .nav-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: #D4AF37;
+        }
+
+        .nav-item.active {
+            background: #D4AF37;
+            color: #0a0f1d;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+        }
+
+        .dark .card {
+            background: #0f1624;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: #D4AF37;
+            color: #0a0f1d;
+        }
+
+        .btn-primary:hover {
+            background: #c9a227;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid currentColor;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #0a0f1d;
+        }
+
+        .dark .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+
+        .btn-danger {
+            background: #EF4444;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #DC2626;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #0a0f1d;
+        }
+
+        .dark .form-label {
+            color: white;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            background: white;
+            color: #0a0f1d;
+            transition: all 0.3s ease;
+        }
+
+        .dark .form-input,
+        .dark .form-textarea,
+        .dark .form-select {
+            background: #050810;
+            border-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .image-preview {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9fafb;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .dark .image-preview {
+            background: #050810;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-item {
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 16px;
+            align-items: center;
+            padding: 16px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .dark .blog-item {
+            background: #0f1624;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .blog-thumbnail {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: #f3f4f6;
+        }
+
+        .blog-info h3 {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #0a0f1d;
+        }
+
+        .dark .blog-info h3 {
+            color: white;
+        }
+
+        .blog-info p {
+            font-size: 13px;
+            color: #6b7280;
+            margin: 4px 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 50;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .dark .modal-content {
+            background: #0f1624;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #6b7280;
+        }
+
+        .modal-close:hover {
+            color: #0a0f1d;
+        }
+
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+            color: #1e40af;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+        }
+
+        .alert-warning {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            color: #92400e;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f4f6;
+            border-top-color: #D4AF37;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .admin-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+                display: flex;
+                overflow-x: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+                grid-column: 1 / -1;
+            }
+
+            .nav-item {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            .blog-item {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-thumbnail {
+                width: 100%;
+                height: 200px;
+            }
+
+            .btn {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .section h1 {
+                font-size: 1.875rem;
+                line-height: 1.2;
+            }
+
+            .section p {
+                font-size: 0.875rem;
+                line-height: 1.5;
+            }
+
+            .card {
+                padding: 16px;
+            }
+
+            .card h2 {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="fixed inset-0 bg-gradient-to-br from-brand-gold/10 to-brand-green/10 dark:from-brand-dark dark:to-brand-darker flex items-center justify-center z-50">
+        <div class="card max-w-md w-full mx-4">
+            <div class="text-center mb-8">
+                <div class="w-12 h-12 rounded-full bg-brand-gold flex items-center justify-center mx-auto mb-4">
+                    <span class="text-brand-dark font-bold text-xl">S</span>
+                </div>
+                <h1 class="text-3xl font-bold text-brand-dark dark:text-white">Admin Panel</h1>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">Sahasra Bharat Blog Management</p>
+            </div>
+
+            <form id="loginForm" class="space-y-4">
+                <div class="form-group">
+                    <label for="adminPassword" class="form-label">Admin Password</label>
+                    <input type="password" id="adminPassword" class="form-input" placeholder="Enter admin password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="hidden admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="p-6 border-b border-gray-200 dark:border-white/10">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-brand-gold flex items-center justify-center">
+                        <span class="text-brand-dark font-bold text-sm">S</span>
+                    </div>
+                    <span class="font-bold text-brand-dark dark:text-white">Admin</span>
+                </div>
+                <p class="text-xs text-gray-600 dark:text-gray-400">Blog Management System</p>
+            </div>
+
+            <nav class="p-4 space-y-2">
+                <a href="#" data-section="blogs" class="nav-item active">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l9.5 5.5v9A7.5 7.5 0 0 1 12 21a7.5 7.5 0 0 1-9.5-4.5v-9L12 2z"/></svg>
+                    Manage Blogs
+                </a>
+                <a href="#" data-section="submissions" class="nav-item">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 12H6v-2h14v2zm0-3H6V9h14v2zm0-3H6V6h14v2z"/></svg>
+                    Form Submissions
+                </a>
+                <a href="#" data-section="settings" class="nav-item">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14,12.94c.04,-0.3 .06,-0.61 .06,-0.94c0,-0.32 -0.02,-0.64 -0.07,-0.94l2.03,-1.58c.18,-0.14 .23,-0.41 .12,-0.64l-1.92,-3.32c-0.12,-0.22 -0.37,-0.29 -0.59,-0.22l-2.39,0.96c-0.5,-0.38 -1.03,-0.7 -1.62,-0.94L14.4,2.81c-0.04,-0.24 -0.24,-0.41 -0.48,-0.41h-3.84c-0.24,0 -0.43,0.17 -0.47,0.41L9.25,5.35C8.66,5.59 8.12,5.92 7.63,6.29L5.24,5.33c-0.22,-0.08 -0.47,0 -0.59,0.22L2.74,8.87C2.62,9.08 2.66,9.34 2.86,9.48l2.03,1.58C4.84,11.36 4.8,11.69 4.8,12s0.02,0.64 0.07,0.94l-2.03,1.58c-0.18,0.14 -0.23,0.41 -0.12,0.64l1.92,3.32c0.12,0.22 0.37,0.29 0.59,0.22l2.39,-0.96c0.5,0.38 1.03,0.7 1.62,0.94l0.36,2.54c0.05,0.24 0.24,0.41 0.48,0.41h3.84c0.24,0 0.44,-0.17 0.47,-0.41l0.36,-2.54c0.59,-0.24 1.13,-0.56 1.62,-0.94l2.39,0.96c0.22,0.08 0.47,0 0.59,-0.22l1.92,-3.32c0.12,-0.22 0.07,-0.49 -0.12,-0.64L19.14,12.94zM12,15.6c-1.98,0 -3.6,-1.62 -3.6,-3.6s1.62,-3.6 3.6,-3.6s3.6,1.62 3.6,3.6S13.98,15.6 12,15.6z"/></svg>
+                    Settings
+                </a>
+                <div class="border-t border-gray-200 dark:border-white/10 my-4"></div>
+                <button id="logoutBtn" class="nav-item w-full text-left">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+                    Logout
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Blogs Section -->
+            <section id="blogsSection" class="section">
+                <div class="mb-8">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                        <h1 class="text-3xl font-bold text-brand-dark dark:text-white">Manage Blogs</h1>
+                        <button id="addBlogBtn" class="btn btn-primary">
+                            <span class="mr-2">+</span> Add New Blog
+                        </button>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Create, edit, and manage daily blog posts</p>
+                </div>
+
+                <div id="blogsList" class="space-y-4">
+                    <!-- Blogs will be listed here -->
+                </div>
+            </section>
+
+            <!-- Submissions Section -->
+            <section id="submissionsSection" class="hidden section">
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-brand-dark dark:text-white mb-2">Form Submissions</h1>
+                    <p class="text-gray-600 dark:text-gray-400">View all health walk and farm registration submissions</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card">
+                        <h2 class="text-xl font-bold text-brand-dark dark:text-white mb-4">Health Walk Registrations</h2>
+                        <div id="healthSubmissions" class="space-y-3">
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">No submissions yet</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="text-xl font-bold text-brand-dark dark:text-white mb-4">Farm Registrations</h2>
+                        <div id="farmSubmissions" class="space-y-3">
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">No submissions yet</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settingsSection" class="hidden section">
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-brand-dark dark:text-white mb-2">Settings</h1>
+                    <p class="text-gray-600 dark:text-gray-400">Manage admin panel settings</p>
+                </div>
+
+                <div class="card max-w-2xl">
+                    <form id="settingsForm" class="space-y-6">
+                        <div class="form-group">
+                            <label for="blogsPerPage" class="form-label">Blogs Per Page</label>
+                            <input type="number" id="blogsPerPage" class="form-input" min="5" max="50" value="10">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="flex items-center gap-3">
+                                <input type="checkbox" id="darkMode" class="w-4 h-4 rounded">
+                                <span class="form-label m-0">Enable Dark Mode by Default</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save Settings</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add/Edit Blog Modal -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <button type="button" class="modal-close">&times;</button>
+            <h2 id="modalTitle" class="text-2xl font-bold text-brand-dark dark:text-white mb-6">Add New Blog Post</h2>
+
+            <form id="blogForm" class="space-y-6">
+                <div class="form-group">
+                    <label for="blogTitle" class="form-label">Blog Title</label>
+                    <input type="text" id="blogTitle" class="form-input" placeholder="Enter blog title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="blogDate" class="form-label">Date</label>
+                    <input type="date" id="blogDate" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="blogExcerpt" class="form-label">Excerpt</label>
+                    <textarea id="blogExcerpt" class="form-textarea" placeholder="Brief description (150 characters)" required></textarea>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 mt-2"><span id="charCount">0</span>/150 characters</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="blogImage" class="form-label">Blog Image</label>
+                    <input type="file" id="blogImage" class="form-input" accept="image/*">
+                    <p class="text-xs text-gray-600 dark:text-gray-400 mt-2">Recommended: 800x450px (Max 2MB)</p>
+                    <div id="imagePreview" class="image-preview hidden mt-4">
+                        <img id="previewImg" src="" alt="Preview">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="blogCategory" class="form-label">Category</label>
+                    <select id="blogCategory" class="form-select">
+                        <option value="health">Health & Wellness</option>
+                        <option value="agriculture">Agriculture</option>
+                        <option value="education">Education</option>
+                        <option value="business">Business</option>
+                        <option value="technology">Technology</option>
+                        <option value="general">General</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="blogContent" class="form-label">Full Content (Optional)</label>
+                    <textarea id="blogContent" class="form-textarea" placeholder="Full blog content..."></textarea>
+                </div>
+
+                <div class="flex gap-3">
+                    <button type="submit" id="saveBlogBtn" class="btn btn-primary flex-1">Save Blog Post</button>
+                    <button type="button" class="btn btn-secondary flex-1 modal-close-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- File Input Hidden (for import) -->
+    <input type="file" id="importFile" class="hidden" accept=".json">
+
+    <!-- JavaScript -->
+    <script>
+        // ============================================
+        // ADMIN PANEL APPLICATION
+        // ============================================
+
+        class AdminPanel {
+            constructor() {
+                this.currentUser = null;
+                this.blogs = [];
+                this.submissions = { health: [], farm: [] };
+                this.init();
+            }
+
+            async init() {
+                this.setupEventListeners();
+                this.loadSettings();
+                await this.checkAuth();
+            }
+
+            async checkAuth() {
+                try {
+                    const res = await fetch('api.php?action=check_session&t=' + Date.now(), { credentials: 'include' });
+                    if (res.ok) {
+                        const data = await res.json();
+                        if (data.logged_in) {
+                            this.currentUser = 'admin';
+                            await this.showDashboard();
+                            return;
+                        }
+                    }
+                } catch (e) {
+                    console.error('Session check failed', e);
+                }
+                this.showLogin();
+            }
+
+            async refreshData() {
+                // Fetch blogs from DB
+                try {
+                    const res = await fetch('api.php?action=get_blogs&t=' + Date.now(), { credentials: 'include' });
+                    if (res.ok) {
+                        const data = await res.json();
+                        this.blogs = data.blogs || [];
+                    } else if (res.status === 401) {
+                        this.showLogin();
+                        return;
+                    }
+                } catch (e) {
+                    this.showAlert('Failed to fetch blogs from database', 'error');
+                }
+
+                // Fetch submissions from DB
+                try {
+                    const res = await fetch('api.php?action=get_submissions&t=' + Date.now(), { credentials: 'include' });
+                    if (res.ok) {
+                        const data = await res.json();
+                        this.submissions = data.submissions || { health: [], farm: [] };
+                    } else if (res.status === 401) {
+                        this.showLogin();
+                        return;
+                    }
+                } catch (e) {
+                    this.showAlert('Failed to fetch submissions from database', 'error');
+                }
+
+                this.renderBlogs();
+                this.renderSubmissions();
+            }
+
+            setupEventListeners() {
+                // Login
+                document.getElementById('loginForm').addEventListener('submit', (e) => this.handleLogin(e));
+
+                // Navigation
+                document.querySelectorAll('[data-section]').forEach(link => {
+                    link.addEventListener('click', (e) => this.switchSection(e));
+                });
+
+                // Blog Management
+                document.getElementById('addBlogBtn').addEventListener('click', () => this.openBlogModal());
+                document.getElementById('blogForm').addEventListener('submit', (e) => this.saveBlog(e));
+                document.getElementById('blogImage').addEventListener('change', (e) => this.previewImage(e));
+                document.getElementById('blogExcerpt').addEventListener('input', (e) => this.updateCharCount(e));
+
+                // Modal Close
+                document.querySelectorAll('.modal-close, .modal-close-btn').forEach(btn => {
+                    btn.addEventListener('click', () => this.closeBlogModal());
+                });
+
+                // Logout
+                document.getElementById('logoutBtn').addEventListener('click', () => this.logout());
+
+                // Settings
+                document.getElementById('settingsForm').addEventListener('submit', (e) => this.saveSettings(e));
+
+                // Modal backdrop
+                document.getElementById('blogModal').addEventListener('click', (e) => {
+                    if (e.target.id === 'blogModal') this.closeBlogModal();
+                });
+            }
+
+            // ============================================
+            // AUTHENTICATION
+            // ============================================
+
+            async handleLogin(e) {
+                e.preventDefault();
+                const password = document.getElementById('adminPassword').value;
+
+                try {
+                    const res = await fetch('api.php?action=login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ password: password }),
+                        credentials: 'include'
+                    });
+                    if (res.ok) {
+                        this.currentUser = 'admin';
+                        this.showAlert('Login successful!', 'success');
+                        setTimeout(() => this.showDashboard(), 500);
+                    } else {
+                        const data = await res.json();
+                        this.showAlert(data.error || 'Invalid password', 'error');
+                        document.getElementById('adminPassword').value = '';
+                    }
+                } catch (err) {
+                    this.showAlert('Connection error', 'error');
+                }
+            }
+
+            async logout() {
+                if (confirm('Are you sure you want to logout?')) {
+                    try {
+                        await fetch('api.php?action=logout', { credentials: 'include' });
+                    } catch (e) {
+                        console.error('Logout failed', e);
+                    }
+                    this.currentUser = null;
+                    this.showLogin();
+                }
+            }
+
+            showLogin() {
+                document.getElementById('loginScreen').style.display = 'flex';
+                document.getElementById('adminDashboard').classList.add('hidden');
+            }
+
+            async showDashboard() {
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('adminDashboard').classList.remove('hidden');
+                await this.refreshData();
+            }
+
+            // ============================================
+            // BLOG MANAGEMENT
+            // ============================================
+
+            openBlogModal(blogId = null) {
+                const modal = document.getElementById('blogModal');
+                const form = document.getElementById('blogForm');
+                const title = document.getElementById('modalTitle');
+
+                form.reset();
+                document.getElementById('imagePreview').classList.add('hidden');
+                document.getElementById('charCount').textContent = '0';
+
+                if (blogId) {
+                    const blog = this.blogs.find(b => b.id.toString() === blogId.toString());
+                    if (blog) {
+                        title.textContent = 'Edit Blog Post';
+                        document.getElementById('blogTitle').value = blog.title;
+                        document.getElementById('blogDate').value = blog.date;
+                        document.getElementById('blogExcerpt').value = blog.excerpt;
+                        document.getElementById('blogCategory').value = blog.category || 'general';
+                        document.getElementById('blogContent').value = blog.content || '';
+                        document.getElementById('charCount').textContent = blog.excerpt.length;
+                        
+                        if (blog.image) {
+                            document.getElementById('previewImg').src = blog.image;
+                            document.getElementById('imagePreview').classList.remove('hidden');
+                        }
+
+                        form.dataset.blogId = blogId;
+                    }
+                } else {
+                    title.textContent = 'Add New Blog Post';
+                    document.getElementById('blogDate').valueAsDate = new Date();
+                    delete form.dataset.blogId;
+                }
+
+                modal.classList.add('active');
+            }
+
+            closeBlogModal() {
+                document.getElementById('blogModal').classList.remove('active');
+                document.getElementById('blogForm').reset();
+            }
+
+            previewImage(e) {
+                const file = e.target.files[0];
+                if (file && file.size > 2 * 1024 * 1024) {
+                    this.showAlert('Image size must be less than 2MB', 'error');
+                    e.target.value = '';
+                    return;
+                }
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        document.getElementById('previewImg').src = event.target.result;
+                        document.getElementById('imagePreview').classList.remove('hidden');
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            updateCharCount(e) {
+                const count = e.target.value.length;
+                document.getElementById('charCount').textContent = Math.min(count, 150);
+                if (count > 150) {
+                    e.target.value = e.target.value.substring(0, 150);
+                }
+            }
+
+            async saveBlog(e) {
+                e.preventDefault();
+
+                const saveBtn = document.getElementById('saveBlogBtn');
+                const originalText = saveBtn.innerHTML;
+                saveBtn.disabled = true;
+                saveBtn.innerHTML = '<span class="spinner"></span> Saving...';
+
+                const resetBtn = () => {
+                    saveBtn.disabled = false;
+                    saveBtn.innerHTML = originalText;
+                };
+
+                const blogId = document.getElementById('blogForm').dataset.blogId || Date.now().toString();
+                const imageInput = document.getElementById('blogImage');
+                let imageUrl = this.blogs.find(b => b.id.toString() === blogId.toString())?.image || null;
+
+                // If a new image is selected, upload it first
+                if (imageInput.files[0]) {
+                    const file = imageInput.files[0];
+                    try {
+                        const formData = new FormData();
+                        formData.append('image', file);
+                        const uploadResponse = await fetch('api.php?action=upload_image', {
+                            method: 'POST',
+                            body: formData,
+                            credentials: 'include'
+                        });
+                        if (uploadResponse.ok) {
+                            const uploadData = await uploadResponse.json();
+                            imageUrl = uploadData.imageUrl;
+                        } else {
+                            this.showAlert('Failed to upload image to server, saving locally instead.', 'warning');
+                            imageUrl = document.getElementById('previewImg').src;
+                        }
+                    } catch (err) {
+                        console.error('Upload error, falling back to base64', err);
+                        this.showAlert('Connection error, saving image as base64 locally.', 'warning');
+                        imageUrl = document.getElementById('previewImg').src;
+                    }
+                }
+
+                const blog = {
+                    id: blogId,
+                    title: document.getElementById('blogTitle').value,
+                    date: document.getElementById('blogDate').value,
+                    excerpt: document.getElementById('blogExcerpt').value,
+                    category: document.getElementById('blogCategory').value,
+                    content: document.getElementById('blogContent').value,
+                    image: imageUrl,
+                    createdAt: this.blogs.find(b => b.id.toString() === blogId.toString())?.createdAt || new Date().toISOString()
+                };
+
+                // Post to DB via PHP backend
+                try {
+                    const dbResponse = await fetch('api.php?action=save_blog', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(blog),
+                        credentials: 'include'
+                    });
+                    if (!dbResponse.ok) {
+                        let errorMsg = 'Failed to save blog post to database.';
+                        try {
+                            const errorData = await dbResponse.json();
+                            if (errorData && errorData.error) {
+                                errorMsg += ' Error: ' + errorData.error;
+                            }
+                        } catch (e) {}
+
+                        if (dbResponse.status === 401) {
+                            this.showLogin();
+                            this.showAlert('Session expired, please login again.', 'error');
+                        } else {
+                            this.showAlert(errorMsg, 'error');
+                        }
+                        resetBtn();
+                        return;
+                    }
+                } catch (err) {
+                    console.error('Database connection error', err);
+                    this.showAlert('Database connection error. Failed to save.', 'error');
+                    resetBtn();
+                    return;
+                }
+
+                const existingIndex = this.blogs.findIndex(b => b.id.toString() === blogId.toString());
+                if (existingIndex >= 0) {
+                    this.blogs[existingIndex] = blog;
+                } else {
+                    this.blogs.unshift(blog);
+                }
+
+                resetBtn();
+                this.closeBlogModal();
+                this.renderBlogs();
+                this.showAlert('Blog post saved successfully!', 'success');
+            }
+
+            async deleteBlog(blogId) {
+                if (confirm('Are you sure you want to delete this blog post?')) {
+                    // Delete from DB via PHP
+                    try {
+                        const res = await fetch('api.php?action=delete_blog', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: blogId }),
+                            credentials: 'include'
+                        });
+                        if (!res.ok) {
+                            if (res.status === 401) {
+                                this.showLogin();
+                                this.showAlert('Session expired, please login again.', 'error');
+                            } else {
+                                this.showAlert('Failed to delete blog post from database.', 'error');
+                            }
+                            return;
+                        }
+                    } catch (err) {
+                        console.error('Database connection error', err);
+                        this.showAlert('Database connection error. Failed to delete.', 'error');
+                        return;
+                    }
+
+                    this.blogs = this.blogs.filter(b => b.id !== blogId);
+                    this.renderBlogs();
+                    this.showAlert('Blog post deleted', 'success');
+                }
+            }
+
+            renderBlogs() {
+                const container = document.getElementById('blogsList');
+                
+                if (this.blogs.length === 0) {
+                    container.innerHTML = `
+                        <div class="card text-center py-12">
+                            <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            <p class="text-gray-600 dark:text-gray-400">No blog posts yet. Click "Add New Blog" to create one!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = this.blogs.map(blog => `
+                    <div class="blog-item">
+                        ${blog.image ? `<img src="${blog.image}" alt="${blog.title}" class="blog-thumbnail">` : 
+                          `<div class="blog-thumbnail bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>`}
+                        <div class="blog-info">
+                            <h3>${this.escapeHtml(blog.title)}</h3>
+                            <p>${new Date(blog.date).toLocaleDateString('en-IN', {year: 'numeric', month: 'short', day: 'numeric'})}</p>
+                            <p>${this.escapeHtml(blog.excerpt.substring(0, 60))}...</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="badge badge-success">${blog.category}</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button type="button" onclick="app.openBlogModal('${blog.id}')" class="btn btn-secondary text-sm">Edit</button>
+                            <button type="button" onclick="app.deleteBlog('${blog.id}')" class="btn btn-danger text-sm">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // ============================================
+            // SETTINGS & HELPERS
+            // ============================================
+
+            getCategoryColor(category) {
+                const colors = {
+                    health: 'from-brand-gold/20 to-brand-green/20',
+                    agriculture: 'from-brand-bronze/20 to-brand-gold/20',
+                    education: 'from-brand-blue/20 to-brand-green/20',
+                    business: 'from-brand-gold/20 to-brand-blue/20',
+                    technology: 'from-brand-blue/20 to-brand-green/20',
+                    general: 'from-gray-300/20 to-gray-400/20'
+                };
+                return colors[category] || colors.general;
+            }
+
+            loadSettings() {
+                const darkMode = sessionStorage.getItem('adminDarkMode') === 'true';
+                if (darkMode) {
+                    document.documentElement.classList.add('dark');
+                    document.getElementById('darkMode').checked = true;
+                }
+            }
+
+            saveSettings(e) {
+                e.preventDefault();
+                
+                const darkMode = document.getElementById('darkMode').checked;
+                sessionStorage.setItem('adminDarkMode', darkMode);
+                darkMode ? document.documentElement.classList.add('dark') : 
+                          document.documentElement.classList.remove('dark');
+
+                this.showAlert('Settings saved successfully!', 'success');
+            }
+
+            // ============================================
+            // UTILITIES
+            // ============================================
+
+            switchSection(e) {
+                e.preventDefault();
+                const sectionName = e.currentTarget.dataset.section;
+
+                document.querySelectorAll('[data-section]').forEach(link => {
+                    link.classList.remove('active');
+                });
+                e.currentTarget.classList.add('active');
+
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                const section = document.getElementById(`${sectionName}Section`);
+                if (section) {
+                    section.classList.remove('hidden');
+                }
+
+                if (sectionName === 'submissions') {
+                    this.renderSubmissions();
+                }
+            }
+
+            renderSubmissions() {
+                const healthContainer = document.getElementById('healthSubmissions');
+                const farmContainer = document.getElementById('farmSubmissions');
+                
+                if (!healthContainer || !farmContainer) return;
+                
+                const healthData = this.submissions.health || [];
+                const farmData = this.submissions.farm || [];
+                
+                if (healthData.length === 0) {
+                    healthContainer.innerHTML = `<p class="text-gray-600 dark:text-gray-400 text-sm py-4">No submissions yet</p>`;
+                } else {
+                    healthContainer.innerHTML = healthData.map(sub => `
+                        <div class="p-4 bg-gray-50 dark:bg-black/20 rounded-xl border border-gray-200 dark:border-white/5 relative group shadow-sm hover:shadow transition-shadow">
+                            <button type="button" onclick="app.deleteSubmission('health', ${sub.id})" class="absolute top-3 right-3 text-red-500 hover:text-red-700 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold cursor-pointer">Delete</button>
+                            <h4 class="font-bold text-brand-dark dark:text-white">${this.escapeHtml(sub.fullName)}</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-2">
+                                <span class="font-medium text-brand-gold">WhatsApp:</span> 
+                                <a href="https://wa.me/${sub.whatsapp.replace(/[^0-9]/g, '')}" target="_blank" class="hover:underline text-brand-blue">${this.escapeHtml(sub.whatsapp)}</a>
+                            </p>
+                            <p class="text-[10px] text-gray-400 mt-3">${sub.date}</p>
+                        </div>
+                    `).join('');
+                }
+                
+                if (farmData.length === 0) {
+                    farmContainer.innerHTML = `<p class="text-gray-600 dark:text-gray-400 text-sm py-4">No submissions yet</p>`;
+                } else {
+                    farmContainer.innerHTML = farmData.map(sub => `
+                        <div class="p-4 bg-gray-50 dark:bg-black/20 rounded-xl border border-gray-200 dark:border-white/5 relative group shadow-sm hover:shadow transition-shadow space-y-1.5">
+                            <button type="button" onclick="app.deleteSubmission('farm', ${sub.id})" class="absolute top-3 right-3 text-red-500 hover:text-red-700 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold cursor-pointer">Delete</button>
+                            <h4 class="font-bold text-brand-dark dark:text-white">${this.escapeHtml(sub.fullName)}</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                                <span class="font-medium text-brand-gold">WhatsApp:</span> 
+                                <a href="https://wa.me/${sub.whatsapp.replace(/[^0-9]/g, '')}" target="_blank" class="hover:underline text-brand-blue">${this.escapeHtml(sub.whatsapp)}</a>
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                                <span class="font-medium text-brand-gold">Email:</span> 
+                                <a href="mailto:${sub.email}" class="hover:underline text-brand-blue">${this.escapeHtml(sub.email)}</a>
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                                <span class="font-medium text-brand-gold">Farm Size:</span> 
+                                <span class="font-semibold text-brand-dark dark:text-gray-200">${this.escapeHtml(sub.farmSize)} Acres</span>
+                            </p>
+                            <p class="text-[10px] text-gray-400 mt-2">${sub.date}</p>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            async deleteSubmission(type, id) {
+                if (confirm('Are you sure you want to delete this submission?')) {
+                    // Delete from DB via PHP
+                    try {
+                        const res = await fetch('api.php?action=delete_submission', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id.toString() })
+                        });
+                        if (!res.ok) {
+                            if (res.status === 401) {
+                                this.showLogin();
+                                this.showAlert('Session expired, please login again.', 'error');
+                            } else {
+                                this.showAlert('Failed to delete submission from database.', 'error');
+                            }
+                            return;
+                        }
+                    } catch (err) {
+                        console.error('Database connection error', err);
+                        this.showAlert('Database connection error. Failed to delete.', 'error');
+                        return;
+                    }
+
+                    this.submissions[type] = this.submissions[type].filter(sub => sub.id !== id);
+                    this.renderSubmissions();
+                    this.showAlert('Submission deleted', 'success');
+                }
+            }
+
+            showAlert(message, type = 'success') {
+                const alert = document.createElement('div');
+                alert.className = `alert alert-${type} fixed top-4 right-4 max-w-md z-50 animate-pulse`;
+                alert.textContent = message;
+                document.body.appendChild(alert);
+
+                setTimeout(() => {
+                    alert.style.opacity = '0';
+                    setTimeout(() => alert.remove(), 300);
+                }, 3000);
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        }
+
+        // Initialize admin panel
+        const app = new AdminPanel();
+
+        // Make app available globally for inline event handlers
+        window.app = app;
+    </script>
+</body>
+</html>
